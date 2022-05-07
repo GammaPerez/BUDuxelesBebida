@@ -104,6 +104,9 @@ public class mod_bebida extends AppCompatActivity {
                 cimg.put("img",img);
                 Base.update("bebidas",cimg,"id_bebida="+id_mod,null);
                 Toast.makeText(mod_bebida.this, "Acualizacion exitosa", Toast.LENGTH_LONG).show();
+                Intent a = new Intent(mod_bebida.this, bebidas.class);
+                startActivity(a);
+                finish();
             }catch (Exception e){
                 String error = String.valueOf(e);
                 Toast.makeText(mod_bebida.this, error, Toast.LENGTH_LONG).show();
@@ -139,6 +142,8 @@ public class mod_bebida extends AppCompatActivity {
 
 //METODO REGRESAR PANTALLA ANTERIOR
     public void regresar(View view) {
+        Intent a = new Intent(mod_bebida.this, bebidas.class);
+        startActivity(a);
         finish();
     }
 //---------------------------------------

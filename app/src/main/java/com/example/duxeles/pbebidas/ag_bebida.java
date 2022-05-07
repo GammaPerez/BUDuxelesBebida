@@ -116,6 +116,8 @@ public class ag_bebida extends AppCompatActivity {
 
 //METODO REGRESAR PANTALLA ANTERIOR
     public void regresar(View view) {
+        Intent a = new Intent(ag_bebida.this, bebidas.class);
+        startActivity(a);
         finish();
     }
 //---------------------------------------

@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);/*
         listaBebidas=findViewById(R.id.recyclerLista);
-        listaBebidas.setLayoutManager(new LinearLayoutManager(this));
+        listaBebidas.setLayoutManager(new LinearLayoutManager(bebidas));
 
         AdminSQLiteOpenHelper dbBebidas = new AdminSQLiteOpenHelper(MainActivity.this);
 
@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
         ListaBebidasAdapter adapter = new ListaBebidasAdapter(dbBebidas.mostrarBebida());
         //Se envia la información estructurada
         listaBebidas.setAdapter(adapter);
-
+*/
 
     }
 
     //BOTON PROVICIONAL
-    /*public void Bebida (View view){
+    public void Bebida (View view){
         Intent i = new Intent(this, bebidas.class);
         startActivity(i);
-    }*/
+    }
     public void ingredientes (View view){
         Intent i = new Intent(this, ingrediente.class);
         startActivity(i);

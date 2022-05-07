@@ -1,7 +1,11 @@
 package com.example.duxeles.pbebidas;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +15,14 @@ import java.util.List;
 import com.example.duxeles.R;//<-----------------
 
 
-public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder> {
+public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.bebidaViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class bebidaViewHolder extends RecyclerView.ViewHolder{
 
         private TextView nom, precio, desc;
         ImageView img;
 
-        public ViewHolder(View itemView) {
+        public bebidaViewHolder(View itemView) {
             super(itemView);
 
             nom=(TextView)itemView.findViewById(R.id.nom);
@@ -38,20 +42,20 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
     //Agrega un nuevo item a la lista haciendo uso de un layout dentro de otro layout
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_articulo,parent,false);
-        ViewHolder viewHolder= new ViewHolder(view);
-        return viewHolder;
+    public bebidaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_articulo,null,false);
+        return new bebidaViewHolder(view);
     }
 
 
     //Realiza las modificaciones del contenido para cada item
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(bebidaViewHolder holder, int position) {
         holder.nom.setText(bebidasLista.get(position).getNom());
-        holder.precio.setText(bebidasLista.get(position).getPrecio());
+        holder.precio.setText(String.valueOf(bebidasLista.get(position).getPrecio()));
         holder.desc.setText(bebidasLista.get(position).getDesc());
-        holder.img.setImageResource(bebidasLista.get(position).getImg()); //foto?
+        //holder.img.setImageResource(); //foto?
+        holder.img.setImageBitmap(BitmapFactory.decodeByteArray(bebidasLista.get(position).getImg(),0,bebidasLista.get(position).getImg().length));
     }
 
     //Permite determinar al adaptador la cantidad de elementos que se van a procesar

@@ -60,7 +60,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
 
-    public ArrayList<bebidas> mostrarBebida(){
+    /*public ArrayList<bebidas> mostrarBebida(){
 
         AdminSQLiteOpenHelper dbHelper = new AdminSQLiteOpenHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -77,7 +77,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
                 bebida.setNom(cursorBebida.getString(0));
                 bebida.setPrecio(cursorBebida.getString(1));
                 bebida.setDesc(cursorBebida.getString(2));
-                bebida.setImg(cursorBebida.getInt(3));
+                bebida.setImg(cursorBebida.getBlob(3));
 
                 listaBebida.add(bebida); //va llenando una lista con lo que jale de la tabla t_bebidas
 
@@ -88,5 +88,5 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         cursorBebida.close();
         return  listaBebida;
     }//mostrarBebida
-
+*/
 }
