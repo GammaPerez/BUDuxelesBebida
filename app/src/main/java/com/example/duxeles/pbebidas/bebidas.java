@@ -26,7 +26,6 @@ import static com.example.duxeles.AdminSQLiteOpenHelper.t_bebidas;
 public class bebidas extends AppCompatActivity {
 
     RecyclerView listaBebidas;
-    //ArrayList<bebidas> listaArrayBebidas;
     private int id;
     int SelectId;
     private String nom;
@@ -71,11 +70,10 @@ public class bebidas extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bebidas);
+        setContentView(R.layout.activity_bebidas/*activity_main*/);
         listaBebidas= (RecyclerView)findViewById(R.id.recyclerLista);
         LinearLayoutManager linear = new LinearLayoutManager(this);
         listaBebidas.setLayoutManager(linear);
-        //listaArrayBebidas = new ArrayList<>();
         ListaBebidasAdapter adapter = new ListaBebidasAdapter(mostrarBebida());
         adapter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,9 +105,6 @@ public class bebidas extends AppCompatActivity {
     }
 
     public void Eliminar (View view){
-        //ENCARGADO DE ESTA PANTALLA
-        // PASAR COMO VALUE, EL ID CORRESPONDIENTE A LA BEBIDA SELECCIONADA
-        //NOTA: VALOR ACTUAL USADO PARA PRUEBA, MODIFICARLO
         int id = SelectId;
         if(id!=0){
             final String [] Sid = {String.valueOf(id)};
