@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.example.duxeles.AdminSQLiteOpenHelper;
 import com.example.duxeles.R;
 
-import java.io.ByteArrayOutputStream;//:D
+import java.io.ByteArrayOutputStream;//:)
 
 public class ag_bebida extends AppCompatActivity {
 
