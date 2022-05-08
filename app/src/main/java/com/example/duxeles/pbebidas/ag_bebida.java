@@ -25,7 +25,7 @@ public class ag_bebida extends AppCompatActivity {
     private EditText NomBebida, DesBebida, CantBebida, PreBebida;
     ImageView imagen;
 
-    //------------------------------------------
+    //------------------------------------------ :)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
