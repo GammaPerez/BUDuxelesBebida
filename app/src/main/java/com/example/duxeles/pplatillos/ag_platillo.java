@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ag_platillo extends AppCompatActivity {
+
     private EditText nomPlat, desPlat, prePlat;
     private ImageView imgPlat;
     private ListView ingPlat;

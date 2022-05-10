@@ -8,43 +8,91 @@
     android:orientation="vertical"
     android:background="#000000">
 
-    <Button
-        android:id="@+id/Platillo"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/color_boton"
-        android:onClick="platillos"
-        android:layout_marginTop="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginLeft="38dp"
-        android:text="Platillo" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnIngre"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/color_boton"
-        android:layout_marginTop="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginLeft="38dp"
-        android:onClick="ingredientes"
-        android:text="Ingredientes" />
+        <Button
+            android:id="@+id/Platillo"
+            android:layout_width="184dp"
+            android:layout_height="99dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="38dp"
+            android:layout_weight="1"
+            android:background="@color/color_boton"
+            android:includeFontPadding="false"
+            android:onClick="platillos"
+            android:text="Platillo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            tools:textSize="35sp" />
 
-    <Button
-        android:id="@+id/btnBebida"
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_platillos" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginRight="38dp"
-        android:layout_marginBottom="38dp"
         android:layout_weight="1"
-        android:background="@color/color_boton"
-        android:onClick="Bebida"
-        android:text="Bebida"
-        android:textSize="49sp" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnIngre"
+            android:layout_width="168dp"
+            android:layout_height="99dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="38dp"
+            android:layout_weight="1"
+            android:background="@color/color_boton"
+            android:onClick="ingredientes"
+            android:text="Ingredientes"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_ingredientes" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnBebida"
+            android:layout_width="168dp"
+            android:layout_height="99dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginRight="38dp"
+            android:layout_marginBottom="38dp"
+            android:layout_weight="1"
+            android:background="@color/color_boton"
+            android:onClick="Bebida"
+            android:text="Bebidas"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icon_bebidas" />
+    </LinearLayout>
 
 
 </LinearLayout>

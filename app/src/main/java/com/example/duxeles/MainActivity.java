@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.example.duxeles.pbebidas.ListaBebidasAdapter;
 
 import com.example.duxeles.pbebidas.bebidas;
-import com.example.duxeles.pbebidas.bebidasActivity;
+//import com.example.duxeles.pbebidas.bebidasActivity;
 import com.example.duxeles.pingredientes.ingrediente;
 import com.example.duxeles.pplatillos.platillo;
 

@@ -27,6 +27,8 @@ public class bebidas extends AppCompatActivity {
 
     RecyclerView listaBebidas;
     private int id;
+    Cursor cBebida;
+    String sBebida="";
     int SelectId;
     private String nom;
     private Double precio;
@@ -68,6 +70,8 @@ public class bebidas extends AppCompatActivity {
         this.img = img;
     }
 
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bebidas/*activity_main*/);
@@ -79,7 +83,8 @@ public class bebidas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SelectId = mostrarBebida().get(listaBebidas.getChildAdapterPosition(view)).getId();
-                    Toast.makeText(bebidas.this, "ID = "+SelectId, Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(bebidas.this, "ID = "+SelectId+" Bebida = "+sBebida, Toast.LENGTH_SHORT).show();
             }
         });
         listaBebidas.setAdapter(adapter);
@@ -88,6 +93,7 @@ public class bebidas extends AppCompatActivity {
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(bebidas.this);
 
     public void Modificar (View view){
+
         int id = SelectId;
         if (id!=0){
             Intent i = new Intent(bebidas.this, mod_bebida.class);
@@ -97,6 +103,23 @@ public class bebidas extends AppCompatActivity {
             Toast.makeText(bebidas.this, "Seleccione articulo", Toast.LENGTH_SHORT).show();
         }
         id=0;
+
+
+        AdminSQLiteOpenHelper dbHelper = new AdminSQLiteOpenHelper(bebidas.this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String table = "t_bebidas";
+        String campo = "nombreB";
+        String campo2= "id_bebida";
+        String[] params = new String[]{  String.valueOf(id) };
+        cBebida = db.rawQuery("SELECT nombreB FROM t_bebidas WHERE nombreB = ?" , params);
+        if(cBebida.moveToFirst()){
+            do{
+                cBebida.getString(0);
+            }while (cBebida.moveToNext());
+
+        }
+        sBebida = cBebida.toString();
+
     }
 
     public void Agregar(View view){
