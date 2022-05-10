@@ -116,7 +116,6 @@ public class bebidas extends AppCompatActivity {
             do{
                 cBebida.getString(0);
             }while (cBebida.moveToNext());
-
         }
         sBebida = cBebida.toString();
 
