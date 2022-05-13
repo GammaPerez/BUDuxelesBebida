@@ -1,10 +1,8 @@
 package com.example.duxeles.pbebidas;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +24,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
             super(itemView);
 
             nom=(TextView)itemView.findViewById(R.id.nom);
-            precio=(TextView)itemView.findViewById(R.id.precio);
+            precio=(TextView)itemView.findViewById(R.id.signo);
             desc=(TextView)itemView.findViewById(R.id.desc);
             img=(ImageView)itemView.findViewById(R.id.img);
         }

@@ -10,6 +10,7 @@
     <string name="btnElimB">Modificar</string>
     <!--- Pantalla ag_bebida-->
     <string name="btnHome">Home</string>
+    <string name="signo">$</string>
     <string name="txtNomBebida">Nombre bebida</string>
     <string name="txtDesBebida">Descripción</string>
     <string name="tCantidad">Cantidad:</string>

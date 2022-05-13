@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duxeles.R;
-import com.example.duxeles.pbebidas.bebidas;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class RecyclerViewAdaptadorPlatillos extends RecyclerView.Adapter<Recycle
             super(itemView);
 
             nom=(TextView)itemView.findViewById(R.id.nom);
-            precio=(TextView)itemView.findViewById(R.id.precio);
+            precio=(TextView)itemView.findViewById(R.id.signo);
             ing=(TextView)itemView.findViewById(R.id.ing);
             desc=(TextView)itemView.findViewById(R.id.desc);
             img=(ImageView)itemView.findViewById(R.id.img);

@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.duxeles.R;
-import com.example.duxeles.pbebidas.bebidas;
 
 import java.util.ArrayList;
 
