@@ -125,7 +125,7 @@ public class platillo extends AppCompatActivity {
         if(id!=0){
             final String [] Sid = {String.valueOf(id)};
             new AlertDialog.Builder(this)
-                    .setTitle("Eliminacion")
+                    .setTitle("Eliminar platillo")
                     .setMessage("¿Desea eliminar este articulo?")
                     .setNegativeButton(R.string.cancelarEliminacion, new DialogInterface.OnClickListener() {
                         @Override
@@ -145,7 +145,7 @@ public class platillo extends AppCompatActivity {
                                 finish();
 
                             }catch (Exception e){
-                                Toast.makeText(getApplicationContext(), "Error al eliminar", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Error al eliminar platillo", Toast.LENGTH_LONG).show();
                             }
                         }
                     })
@@ -179,7 +179,6 @@ public class platillo extends AppCompatActivity {
         cursorPlatillo.close();
         return  listaPlatillo;
     }//mostrarPlatillo
-
 }
 
 

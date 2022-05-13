@@ -1,10 +1,9 @@
-package com.example.duxeles.pbebidas;
+package com.example.duxeles.pingredientes;
 
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,34 +13,34 @@ import com.example.duxeles.R;
 
 import java.util.ArrayList;
 
-public class ListaBebidasAdapter extends RecyclerView.Adapter<ListaBebidasAdapter.ViewHolder> implements View.OnClickListener {
+public class ListaIngredientesAdapter extends RecyclerView.Adapter<ListaIngredientesAdapter.ViewHolder> implements View.OnClickListener {
 
-    ArrayList<bebidas> listaBebidas;
+    ArrayList<ingrediente> listaIngredientes;
     private View.OnClickListener listener;
 
-    public ListaBebidasAdapter( ArrayList<bebidas> listaBebidas){
-        this.listaBebidas = listaBebidas;
+    public ListaIngredientesAdapter(ArrayList<ingrediente> listaIngredientes){
+        this.listaIngredientes = listaIngredientes;
     }
 
     @NonNull
     @Override //Asigna el diseño de cada elemento de la lista
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_articulo, null, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ing, null, false);
         view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
     @Override //Asigna los elementos correspondidentes para cada campo
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.nom.setText(listaBebidas.get(position).getNom());
-        holder.precio.setText(String.valueOf(listaBebidas.get(position).getPrecio()));
-        holder.desc.setText(listaBebidas.get(position).getDesc());
-        holder.img.setImageBitmap(BitmapFactory.decodeByteArray(listaBebidas.get(position).getImg(),0,listaBebidas.get(position).getImg().length));
+        holder.nom.setText(listaIngredientes.get(position).getNom());
+        holder.cant.setText(String.valueOf(listaIngredientes.get(position).getCant()));
+        holder.precio.setText(String.valueOf(listaIngredientes.get(position).getPrecio()));
+
     }
 
     @Override
     public int getItemCount() {
-       return listaBebidas.size();
+       return listaIngredientes.size();
     }
 
 //SELECCIONAR ID
@@ -55,21 +54,17 @@ public class ListaBebidasAdapter extends RecyclerView.Adapter<ListaBebidasAdapte
             listener.onClick(view);
         }
     }
-//-----------------------------------------------
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nom, precio, desc;
-        ImageView img;
-
-
+        TextView nom, precio, cant;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nom = itemView.findViewById(R.id.nom);
             precio = itemView.findViewById(R.id.precio);
-            desc = itemView.findViewById(R.id.desc);
-            img = itemView.findViewById(R.id.img);
+            cant = itemView.findViewById(R.id.cant);
         }
     }
 }

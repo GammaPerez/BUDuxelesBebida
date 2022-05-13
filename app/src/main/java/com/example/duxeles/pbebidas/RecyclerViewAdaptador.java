@@ -24,7 +24,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
             super(itemView);
 
             nom=(TextView)itemView.findViewById(R.id.nom);
-            precio=(TextView)itemView.findViewById(R.id.signo);
+            precio=(TextView)itemView.findViewById(R.id.precio);
             desc=(TextView)itemView.findViewById(R.id.desc);
             img=(ImageView)itemView.findViewById(R.id.img);
         }

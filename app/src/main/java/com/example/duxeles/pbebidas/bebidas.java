@@ -74,7 +74,7 @@ public class bebidas extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bebidas/*activity_main*/);
+        setContentView(R.layout.activity_bebidas);
         listaBebidas= (RecyclerView)findViewById(R.id.recyclerLista);
         LinearLayoutManager linear = new LinearLayoutManager(this);
         listaBebidas.setLayoutManager(linear);
@@ -131,7 +131,7 @@ public class bebidas extends AppCompatActivity {
         if(id!=0){
             final String [] Sid = {String.valueOf(id)};
             new AlertDialog.Builder(this)
-                    .setTitle("Eliminacion")
+                    .setTitle("Eliminar bebida")
                     .setMessage("¿Desea eliminar este articulo?")
                     .setNegativeButton(R.string.cancelarEliminacion, new DialogInterface.OnClickListener() {
                         @Override
@@ -151,7 +151,7 @@ public class bebidas extends AppCompatActivity {
                                 finish();
 
                             }catch (Exception e){
-                                Toast.makeText(getApplicationContext(), "Error al eliminar", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Error al eliminar bebida", Toast.LENGTH_LONG).show();
                             }
                         }
                     })
